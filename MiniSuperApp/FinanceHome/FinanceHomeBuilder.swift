@@ -6,8 +6,14 @@ protocol FinanceHomeDependency: Dependency {
 }
 
 final class FinanceHomeComponent: Component<FinanceHomeDependency>, SuperPayDashboardDependency {
-  
   // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
+  private let balancePublisher: CurrentValuePublisher<Double>
+  var balance: ReadOnlyCurrentValuePublisher<Double> { balancePublisher }
+  init(dependency: FinanceHomeDependency,
+       balance: CurrentValuePublisher<Double>) {
+    self.balancePublisher = balance
+    super.init(dependency: dependency)
+  }
 }
 
 // MARK: - Builder
@@ -23,7 +29,11 @@ final class FinanceHomeBuilder: Builder<FinanceHomeDependency>, FinanceHomeBuild
   }
   
   func build(withListener listener: FinanceHomeListener) -> FinanceHomeRouting {
-    let component = FinanceHomeComponent(dependency: dependency)
+    let balancePublisher = CurrentValuePublisher<Double>(10000)
+    let component = FinanceHomeComponent(
+      dependency: dependency,
+      balance: balancePublisher
+    )
     let viewController = FinanceHomeViewController()
     let interactor = FinanceHomeInteractor(presenter: viewController)
     interactor.listener = listener

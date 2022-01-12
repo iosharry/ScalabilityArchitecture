@@ -18,6 +18,11 @@
 		73F2C2D8278F1494005665FF /* CardOnFileDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F2C2D4278F1494005665FF /* CardOnFileDashboardViewController.swift */; };
 		73F2C2D9278F1494005665FF /* CardOnFileDashboardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F2C2D5278F1494005665FF /* CardOnFileDashboardBuilder.swift */; };
 		73F2C2DA278F1494005665FF /* CardOnFileDashboardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F2C2D6278F1494005665FF /* CardOnFileDashboardInteractor.swift */; };
+		73F2C2DD278F1928005665FF /* AddPaymentMethodButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F2C2DC278F1928005665FF /* AddPaymentMethodButton.swift */; };
+		73F2C2DF278F1B2D005665FF /* PaymentMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F2C2DE278F1B2D005665FF /* PaymentMethodView.swift */; };
+		73F2C2E1278F1C12005665FF /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F2C2E0278F1C12005665FF /* PaymentMethod.swift */; };
+		73F2C2E4278F1C64005665FF /* CardOnFileRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F2C2E3278F1C64005665FF /* CardOnFileRepository.swift */; };
+		73F2C2E6278F1E61005665FF /* PaymentMethodViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F2C2E5278F1E61005665FF /* PaymentMethodViewModel.swift */; };
 		F57EBE542738468700FE9319 /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE512738468700FE9319 /* UIImage+Utils.swift */; };
 		F57EBE552738468700FE9319 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE522738468700FE9319 /* Array+Utils.swift */; };
 		F57EBE562738468700FE9319 /* UITableView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57EBE532738468700FE9319 /* UITableView+Utils.swift */; };
@@ -68,6 +73,11 @@
 		73F2C2D4278F1494005665FF /* CardOnFileDashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOnFileDashboardViewController.swift; sourceTree = "<group>"; };
 		73F2C2D5278F1494005665FF /* CardOnFileDashboardBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOnFileDashboardBuilder.swift; sourceTree = "<group>"; };
 		73F2C2D6278F1494005665FF /* CardOnFileDashboardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOnFileDashboardInteractor.swift; sourceTree = "<group>"; };
+		73F2C2DC278F1928005665FF /* AddPaymentMethodButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPaymentMethodButton.swift; sourceTree = "<group>"; };
+		73F2C2DE278F1B2D005665FF /* PaymentMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodView.swift; sourceTree = "<group>"; };
+		73F2C2E0278F1C12005665FF /* PaymentMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
+		73F2C2E3278F1C64005665FF /* CardOnFileRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardOnFileRepository.swift; sourceTree = "<group>"; };
+		73F2C2E5278F1E61005665FF /* PaymentMethodViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewModel.swift; sourceTree = "<group>"; };
 		F57EBE512738468700FE9319 /* UIImage+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
 		F57EBE522738468700FE9319 /* Array+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
 		F57EBE532738468700FE9319 /* UITableView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Utils.swift"; sourceTree = "<group>"; };
@@ -136,12 +146,32 @@
 		73F2C2D2278F1460005665FF /* CardOnFileDashboard */ = {
 			isa = PBXGroup;
 			children = (
+				73F2C2DB278F191D005665FF /* Views */,
 				73F2C2D3278F1494005665FF /* CardOnFileDashboardRouter.swift */,
 				73F2C2D4278F1494005665FF /* CardOnFileDashboardViewController.swift */,
 				73F2C2D5278F1494005665FF /* CardOnFileDashboardBuilder.swift */,
 				73F2C2D6278F1494005665FF /* CardOnFileDashboardInteractor.swift */,
+				73F2C2E0278F1C12005665FF /* PaymentMethod.swift */,
+				73F2C2E5278F1E61005665FF /* PaymentMethodViewModel.swift */,
 			);
 			path = CardOnFileDashboard;
+			sourceTree = "<group>";
+		};
+		73F2C2DB278F191D005665FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				73F2C2DC278F1928005665FF /* AddPaymentMethodButton.swift */,
+				73F2C2DE278F1B2D005665FF /* PaymentMethodView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		73F2C2E2278F1C54005665FF /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				73F2C2E3278F1C64005665FF /* CardOnFileRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		F57F6AD926DB49E500C0117D /* AppHome */ = {
@@ -160,6 +190,7 @@
 		F57F6ADA26DB49EA00C0117D /* FinanceHome */ = {
 			isa = PBXGroup;
 			children = (
+				73F2C2E2278F1C54005665FF /* Repository */,
 				73F2C2D2278F1460005665FF /* CardOnFileDashboard */,
 				730B30F8278B28D3003A2AAA /* SuperPayDashboard */,
 				F57F6AE426DB4A2700C0117D /* FinanceHomeRouter.swift */,
@@ -363,9 +394,12 @@
 				F57F6AEA26DB4A2700C0117D /* FinanceHomeBuilder.swift in Sources */,
 				F5EAA22E270B3A4500EF2B70 /* SuperPayView.swift in Sources */,
 				F5EAA220270B39DC00EF2B70 /* PushModalPresentationController.swift in Sources */,
+				73F2C2DD278F1928005665FF /* AddPaymentMethodButton.swift in Sources */,
+				73F2C2DF278F1B2D005665FF /* PaymentMethodView.swift in Sources */,
 				F57F6AF126DB4A2D00C0117D /* ProfileHomeViewController.swift in Sources */,
 				73F2C2D8278F1494005665FF /* CardOnFileDashboardViewController.swift in Sources */,
 				F57F6AF326DB4A2D00C0117D /* ProfileHomeInteractor.swift in Sources */,
+				73F2C2E4278F1C64005665FF /* CardOnFileRepository.swift in Sources */,
 				F5829F7626DB34AA00BFA8CD /* AppRootBuilder.swift in Sources */,
 				F5EAA230270B3A7100EF2B70 /* RIBs+Utils.swift in Sources */,
 				F57EBE542738468700FE9319 /* UIImage+Utils.swift in Sources */,
@@ -378,6 +412,7 @@
 				F5829F7726DB34AA00BFA8CD /* AppRootInteractor.swift in Sources */,
 				F5EAA22D270B3A4500EF2B70 /* RideTypeView.swift in Sources */,
 				73F2C2D7278F1494005665FF /* CardOnFileDashboardRouter.swift in Sources */,
+				73F2C2E1278F1C12005665FF /* PaymentMethod.swift in Sources */,
 				730B3108278B297B003A2AAA /* SuperPayDashboardInteractor.swift in Sources */,
 				73F2C2D1278F10AB005665FF /* NumberFormatter.swift in Sources */,
 				F5EAA219270B395900EF2B70 /* HomeWidgetView.swift in Sources */,
@@ -391,6 +426,7 @@
 				F57F6AE926DB4A2700C0117D /* FinanceHomeViewController.swift in Sources */,
 				F5829F5926DB2BC400BFA8CD /* AppDelegate.swift in Sources */,
 				F5EAA21C270B395900EF2B70 /* AppHomeViewController.swift in Sources */,
+				73F2C2E6278F1E61005665FF /* PaymentMethodViewModel.swift in Sources */,
 				730B3105278B297B003A2AAA /* SuperPayDashboardRouter.swift in Sources */,
 				F5EAA236270B3AA600EF2B70 /* UIColor+Super.swift in Sources */,
 				F5829F7926DB397300BFA8CD /* AppComponent.swift in Sources */,

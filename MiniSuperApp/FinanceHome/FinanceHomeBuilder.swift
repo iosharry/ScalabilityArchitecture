@@ -9,9 +9,12 @@ final class FinanceHomeComponent: Component<FinanceHomeDependency>, SuperPayDash
   // TODO: Declare 'fileprivate' dependencies that are only used by this RIB.
   private let balancePublisher: CurrentValuePublisher<Double>
   var balance: ReadOnlyCurrentValuePublisher<Double> { balancePublisher }
+  var cardOnFileRepository: CardOnFileRepository
   init(dependency: FinanceHomeDependency,
-       balance: CurrentValuePublisher<Double>) {
+       balance: CurrentValuePublisher<Double>,
+       cardOnFileRepository: CardOnFileRepository) {
     self.balancePublisher = balance
+    self.cardOnFileRepository = cardOnFileRepository
     super.init(dependency: dependency)
   }
 }
@@ -32,7 +35,8 @@ final class FinanceHomeBuilder: Builder<FinanceHomeDependency>, FinanceHomeBuild
     let balancePublisher = CurrentValuePublisher<Double>(10000)
     let component = FinanceHomeComponent(
       dependency: dependency,
-      balance: balancePublisher
+      balance: balancePublisher,
+      cardOnFileRepository: CardOnFileRepositoryImp()
     )
     let viewController = FinanceHomeViewController()
     let interactor = FinanceHomeInteractor(presenter: viewController)

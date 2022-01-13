@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import Combine
 
 protocol CardOnFileRepository {
   var cardOnFile: ReadOnlyCurrentValuePublisher<[PaymentMethod]> { get }
+  func addCard(info: AddPaymentMethodInfo) -> AnyPublisher<PaymentMethod, Error>
 }
 
 final class CardOnFileRepositoryImp: CardOnFileRepository {
@@ -21,4 +23,12 @@ final class CardOnFileRepositoryImp: CardOnFileRepository {
     PaymentMethod(id: "3", name: "국민은행", digits: "1234", color: "#65c466ff", isPrimary: false),
     PaymentMethod(id: "4", name: "카카오뱅크", digits: "5678", color: "#ffcc00ff", isPrimary: false)
   ])
+  
+  func addCard(info: AddPaymentMethodInfo) -> AnyPublisher<PaymentMethod, Error> {
+    let paymentMethod = PaymentMethod(id: "00", name: "New zkem", digits: "\(info.number.suffix(4))", color: "#ffcc00ff", isPrimary: false)
+    var new = paymentMethodsSubject.value
+    new.append(paymentMethod)
+    paymentMethodsSubject.send(new)
+    return Just(paymentMethod).setFailureType(to: Error.self).eraseToAnyPublisher()
+  }
 }

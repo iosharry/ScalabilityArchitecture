@@ -8,10 +8,12 @@
 import ModernRIBs
 import UIKit
 
+// 뷰컨에서 유저액션이 발생하면 PresentableListener에게 알려야한다.
 protocol CardOnFileDashboardPresentableListener: AnyObject {
-    // TODO: Declare properties and methods that the view controller can invoke to perform
-    // business logic, such as signIn(). This protocol is implemented by the corresponding
-    // interactor class.
+  // TODO: Declare properties and methods that the view controller can invoke to perform
+  // business logic, such as signIn(). This protocol is implemented by the corresponding
+  // interactor class.
+  func didTapAddPaymentMethod()
 }
 
 final class CardOnFileDashboardViewController: UIViewController, CardOnFileDashboardPresentable, CardOnFileDashboardViewControllable {
@@ -35,7 +37,7 @@ final class CardOnFileDashboardViewController: UIViewController, CardOnFileDashb
     return label
   }()
   
-  private let seeAllButton: UIButton = {
+  private lazy var seeAllButton: UIButton = {
     let button = UIButton()
     button.translatesAutoresizingMaskIntoConstraints = false
     button.setTitle("전체보기", for: .normal)
@@ -54,7 +56,7 @@ final class CardOnFileDashboardViewController: UIViewController, CardOnFileDashb
     return sv
   }()
   
-  private let addMethodButton: AddPaymentMethodButton = {
+  private lazy var addMethodButton: AddPaymentMethodButton = {
     let button = AddPaymentMethodButton()
     button.translatesAutoresizingMaskIntoConstraints = false
     button.roundCorners()
@@ -112,6 +114,6 @@ final class CardOnFileDashboardViewController: UIViewController, CardOnFileDashb
   }
   
   @objc private func addButtonDidTap() {
-    
+    listener?.didTapAddPaymentMethod()
   }
 }

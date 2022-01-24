@@ -21,7 +21,7 @@ protocol TopupViewControllable: ViewControllable {
 final class TopupRouter: Router<TopupInteractable>, TopupRouting {
 
     // TODO: Constructor inject child builder protocols to allow building children.
-    init(interactor: TopupInteractable, viewController: TopupViewControllable) {
+    init(interactor: TopupInteractable, viewController: ViewControllable) {
         self.viewController = viewController
         super.init(interactor: interactor)
         interactor.router = self
@@ -34,5 +34,5 @@ final class TopupRouter: Router<TopupInteractable>, TopupRouting {
 
     // MARK: - Private
 
-    private let viewController: TopupViewControllable
+    private let viewController: ViewControllable
 }
